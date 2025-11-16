@@ -33,6 +33,8 @@ def register():
             return render_template('auth/register.html')
         user = User(username=username, email=email)
         user.set_password(password)
+        if User.query.count() == 0:
+            user.role = 'admin'
         db.session.add(user)
         db.session.commit()
         flash('Registered successfully, please log in')

@@ -1,5 +1,6 @@
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_required
+from ...decorators import admin_required
 from . import bp
 from ...extensions import db
 from ...models import Project, Department
@@ -8,12 +9,17 @@ from datetime import datetime
 
 @bp.route('/')
 def list_projects():
-    items = Project.query.order_by(Project.name.asc()).all()
-    return render_template('projects/list.html', items=items)
+    status = request.args.get('status', '').strip()
+    query = Project.query
+    if status:
+        query = query.filter(Project.status == status)
+    items = query.order_by(Project.name.asc()).all()
+    return render_template('projects/list.html', items=items, status=status)
 
 
 @bp.route('/create', methods=['GET', 'POST'])
 @login_required
+@admin_required
 def create_project():
     departments = Department.query.order_by(Department.name.asc()).all()
     if request.method == 'POST':
@@ -46,6 +52,7 @@ def create_project():
 
 @bp.route('/<int:id>/edit', methods=['GET', 'POST'])
 @login_required
+@admin_required
 def edit_project(id):
     proj = Project.query.get_or_404(id)
     departments = Department.query.order_by(Department.name.asc()).all()
@@ -76,6 +83,7 @@ def edit_project(id):
 
 @bp.route('/<int:id>/delete', methods=['POST'])
 @login_required
+@admin_required
 def delete_project(id):
     proj = Project.query.get_or_404(id)
     db.session.delete(proj)

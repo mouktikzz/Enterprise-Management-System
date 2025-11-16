@@ -1,5 +1,6 @@
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_required
+from ...decorators import admin_required
 from . import bp
 from ...extensions import db
 from ...models import Department
@@ -13,6 +14,7 @@ def list_departments():
 
 @bp.route('/create', methods=['GET', 'POST'])
 @login_required
+@admin_required
 def create_department():
     if request.method == 'POST':
         name = request.form.get('name', '').strip()
@@ -32,6 +34,7 @@ def create_department():
 
 @bp.route('/<int:id>/edit', methods=['GET', 'POST'])
 @login_required
+@admin_required
 def edit_department(id):
     dep = Department.query.get_or_404(id)
     if request.method == 'POST':
@@ -53,8 +56,14 @@ def edit_department(id):
 
 @bp.route('/<int:id>/delete', methods=['POST'])
 @login_required
+@admin_required
 def delete_department(id):
     dep = Department.query.get_or_404(id)
     db.session.delete(dep)
     db.session.commit()
     return redirect(url_for('departments.list_departments'))
+
+@bp.route('/<int:id>')
+def detail(id):
+    dep = Department.query.get_or_404(id)
+    return render_template('departments/detail.html', item=dep)

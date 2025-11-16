@@ -1,5 +1,6 @@
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_required
+from ...decorators import admin_required
 from . import bp
 from ...extensions import db
 from ...models import Employee, Department
@@ -7,12 +8,17 @@ from ...models import Employee, Department
 
 @bp.route('/')
 def list_employees():
-    items = Employee.query.order_by(Employee.name.asc()).all()
-    return render_template('employees/list.html', items=items)
+    q = request.args.get('q', '').strip()
+    query = Employee.query
+    if q:
+        query = query.filter((Employee.name.ilike(f'%{q}%')) | (Employee.email.ilike(f'%{q}%')))
+    items = query.order_by(Employee.name.asc()).all()
+    return render_template('employees/list.html', items=items, q=q)
 
 
 @bp.route('/create', methods=['GET', 'POST'])
 @login_required
+@admin_required
 def create_employee():
     departments = Department.query.order_by(Department.name.asc()).all()
     if request.method == 'POST':
@@ -35,6 +41,7 @@ def create_employee():
 
 @bp.route('/<int:id>/edit', methods=['GET', 'POST'])
 @login_required
+@admin_required
 def edit_employee(id):
     emp = Employee.query.get_or_404(id)
     departments = Department.query.order_by(Department.name.asc()).all()
@@ -61,6 +68,7 @@ def edit_employee(id):
 
 @bp.route('/<int:id>/delete', methods=['POST'])
 @login_required
+@admin_required
 def delete_employee(id):
     emp = Employee.query.get_or_404(id)
     db.session.delete(emp)

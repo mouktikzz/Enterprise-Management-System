@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+  <h2>{{ item.name }}</h2>
+  {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+  <h3>Employees</h3>
+  {% if item.employees %}
+  <ul>
+    {% for e in item.employees %}
+      <li>{{ e.name }} ({{ e.email or '' }})</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No employees in this department.</p>
+  {% endif %}
+  <h3>Projects</h3>
+  {% if item.projects %}
+  <ul>
+    {% for p in item.projects %}
+      <li>{{ p.name }} {% if p.status %}({{ p.status }}){% endif %}</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No projects in this department.</p>
+  {% endif %}
+  <p><a href="{{ url_for('departments.list_departments') }}">Back</a></p>
+</section>
+{% endblock %}
