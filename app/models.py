@@ -28,3 +28,13 @@ class Employee(db.Model):
     email = db.Column(db.String(120), unique=True)
     department_id = db.Column(db.Integer, db.ForeignKey('department.id'))
     department = db.relationship('Department', backref=db.backref('employees', lazy=True))
+
+
+class Project(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(160), nullable=False)
+    status = db.Column(db.String(32))
+    start_date = db.Column(db.Date)
+    end_date = db.Column(db.Date)
+    department_id = db.Column(db.Integer, db.ForeignKey('department.id'))
+    department = db.relationship('Department', backref=db.backref('projects', lazy=True))

@@ -1,0 +1,13 @@
+- Create a virtual environment:
+- python -m venv .venv
+- Activate it:
+- Windows: .venv\Scripts\Activate.ps1
+- Linux/Mac: source .venv/bin/activate
+- Install dependencies:
+- python -m pip install -U pip
+- pip install -r requirements.txt
+- Start the server:
+- flask --app wsgi:app run
+- If flask isn’t found: python -m flask --app wsgi:app run or .\.venv\Scripts\flask --app wsgi:app run
+- Open the app:
+- http://127.0.0.1:5000/

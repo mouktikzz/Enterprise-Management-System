@@ -35,10 +35,16 @@ def create_app():
             return None
     from .blueprints.core import bp as core_bp
     app.register_blueprint(core_bp)
+    from .blueprints.dashboard import bp as dash_bp
+    app.register_blueprint(dash_bp)
     from .blueprints.auth import bp as auth_bp
     app.register_blueprint(auth_bp)
     from .blueprints.departments import bp as dep_bp
     app.register_blueprint(dep_bp)
+    from .blueprints.employees import bp as emp_bp
+    app.register_blueprint(emp_bp)
+    from .blueprints.projects import bp as proj_bp
+    app.register_blueprint(proj_bp)
     
     
     # Configure file logging

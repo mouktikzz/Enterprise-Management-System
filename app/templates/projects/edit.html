@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+  <h2>Edit Project</h2>
+  <form method="post">
+    <label>Name<br><input name="name" value="{{ item.name }}" required></label><br>
+    <label>Status<br><input name="status" value="{{ item.status }}"></label><br>
+    <label>Start Date<br><input type="date" name="start_date" value="{{ item.start_date }}"></label><br>
+    <label>End Date<br><input type="date" name="end_date" value="{{ item.end_date }}"></label><br>
+    <label>Department<br>
+      <select name="department_id">
+        <option value="">(none)</option>
+        {% for d in departments %}
+          <option value="{{ d.id }}" {% if item.department and item.department.id == d.id %}selected{% endif %}>{{ d.name }}</option>
+        {% endfor %}
+      </select>
+    </label><br>
+    <button type="submit">Save</button>
+  </form>
+  <p><a href="{{ url_for('projects.list_projects') }}">Back</a></p>
+</section>
+{% endblock %}

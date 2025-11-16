@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+  <h2>Employees</h2>
+  <p><a href="{{ url_for('employees.create_employee') }}">Create employee</a></p>
+  {% if items %}
+  <table>
+    <thead>
+      <tr><th>Name</th><th>Email</th><th>Department</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+      {% for e in items %}
+      <tr>
+        <td>{{ e.name }}</td>
+        <td>{{ e.email or '' }}</td>
+        <td>{{ e.department.name if e.department else '' }}</td>
+        <td>
+          <a href="{{ url_for('employees.edit_employee', id=e.id) }}">Edit</a>
+          <form action="{{ url_for('employees.delete_employee', id=e.id) }}" method="post" style="display:inline">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>No employees yet.</p>
+  {% endif %}
+</section>
+{% endblock %}

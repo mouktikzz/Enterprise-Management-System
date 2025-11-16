@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+  <h2>Dashboard</h2>
+  <ul>
+    <li>Users: {{ counts.users }}</li>
+    <li>Departments: {{ counts.departments }}</li>
+    <li>Employees: {{ counts.employees }}</li>
+  </ul>
+  <p>
+    <a href="{{ url_for('departments.list_departments') }}">Manage Departments</a> •
+    <a href="{{ url_for('employees.list_employees') }}">Manage Employees</a>
+  </p>
+</section>
+{% endblock %}
