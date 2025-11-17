@@ -3,6 +3,9 @@ from flask_login import login_user, logout_user, login_required, current_user
 from . import bp
 from ...extensions import db
 from ...models import User
+from ...decorators import admin_required
+import secrets
+import string
 
 
 @bp.route('/login', methods=['GET', 'POST'])
@@ -47,3 +50,33 @@ def register():
 def logout():
     logout_user()
     return redirect(url_for('core.index'))
+
+
+@bp.route('/create-user', methods=['GET', 'POST'])
+@login_required
+@admin_required
+def create_user():
+    if request.method == 'POST':
+        username = request.form.get('username', '').strip()
+        email = request.form.get('email', '').strip()
+        role = request.form.get('role', 'employee')
+        
+        if not username or not email:
+            flash('Username and email are required')
+            return render_template('auth/create_user.html')
+        
+        if User.query.filter((User.username == username) | (User.email == email)).first():
+            flash('Username or email already exists')
+            return render_template('auth/create_user.html')
+        
+        temp_password = ''.join(secrets.choice(string.ascii_letters + string.digits) for _ in range(10))
+        
+        user = User(username=username, email=email, role=role)
+        user.set_password(temp_password)
+        db.session.add(user)
+        db.session.commit()
+        
+        return render_template('auth/create_user.html', show_credentials=True, 
+                             created_username=username, created_password=temp_password)
+    
+    return render_template('auth/create_user.html')
