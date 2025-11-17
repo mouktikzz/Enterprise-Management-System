@@ -1,6 +1,67 @@
 {% extends "base.html" %}
 {% block content %}
-<section>
-  <p>Welcome!</p>
+
+<!-- Hero Section -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h1 class="display-5 font-weight-bold mb-3">Welcome to Enterprise Management System</h1>
+    <p class="lead text-muted">
+      Streamline your workflow, manage projects, track tasks, and boost productivity — all in one place.
+    </p>
+
+    <!-- ✔ Correct Dashboard URL -->
+    <a href="{{ url_for('dashboard.index') }}" class="btn btn-primary btn-lg mt-3">
+      Go to Dashboard
+    </a>
+  </div>
 </section>
+
+<!-- Features Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row text-center">
+
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="card-title">📁 Project Management</h5>
+            <p class="text-muted">Create, manage, and monitor all organizational projects efficiently.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="card-title">📝 Task Tracking</h5>
+            <p class="text-muted">Assign tasks, set priorities, and track progress in real time.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="card-title">📊 Smart Analytics</h5>
+            <p class="text-muted">Visual dashboards to monitor performance and team productivity.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Get Started -->
+<section class="py-5 bg-primary text-white">
+  <div class="container text-center">
+    <h4 class="mb-3">Ready to get started?</h4>
+    <p class="mb-4">Start managing your team and projects efficiently today.</p>
+
+    <a href="{{ url_for('auth.login') }}" class="btn btn-light btn-lg">
+      Login
+    </a>
+  </div>
+</section>
+
 {% endblock %}

@@ -1,0 +1,706 @@
+2025-11-17 23:05:52,923 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\base.html", line 39, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 11, in block 'content'
+    <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg mt-3">Go to Dashboard</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dashboard'. Did you mean 'dashboard.index' instead?
+2025-11-17 23:09:06,078 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\base.html", line 39, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 11, in block 'content'
+    <a href="{{ url_for('dashboard.index') }}" class="btn btn-primary btn-lg mt-3">Go to Dashboard</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dashboard'. Did you mean 'dashboard.index' instead?
+2025-11-17 23:11:13,711 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\base.html", line 39, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 11, in block 'content'
+    <a href="{{ url_for('dashboard.index') }}" class="btn btn-primary btn-lg mt-3">
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dashboard'. Did you mean 'dashboard.index' instead?
+2025-11-17 23:20:33,468 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\base.html", line 39, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 11, in block 'content'
+    <a href="{{ url_for('dashboard.index') }}" class="btn btn-primary btn-lg mt-3">
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dashboard'. Did you mean 'dashboard.index' instead?
+2025-11-17 23:21:01,040 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\base.html", line 39, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 11, in block 'content'
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dashboard'. Did you mean 'dashboard.index' instead?
+2025-11-17 23:21:03,752 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\base.html", line 39, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 11, in block 'content'
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dashboard'. Did you mean 'dashboard.index' instead?
+2025-11-17 23:21:37,430 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\base.html", line 39, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 11, in block 'content'
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dashboard'. Did you mean 'dashboard.index' instead?
+2025-11-17 23:21:38,260 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\base.html", line 39, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 11, in block 'content'
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dashboard'. Did you mean 'dashboard.index' instead?
+2025-11-17 23:21:38,565 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\base.html", line 39, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 11, in block 'content'
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dashboard'. Did you mean 'dashboard.index' instead?
+2025-11-17 23:21:44,945 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\base.html", line 39, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 11, in block 'content'
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dashboard'. Did you mean 'dashboard.index' instead?
+2025-11-17 23:22:43,745 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\base.html", line 39, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 11, in block 'content'
+    </div>
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dashboard'. Did you mean 'dashboard.index' instead?
+2025-11-17 23:22:44,646 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\base.html", line 39, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\templates\index.html", line 11, in block 'content'
+    </div>
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dashboard'. Did you mean 'dashboard.index' instead?
+2025-11-17 23:29:13,128 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2025-11-17 23:30:48,236 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    render_template("core/index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2025-11-17 23:31:02,366 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    render_template("core/index.html")
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: core/index.html
+2025-11-17 23:31:04,040 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\app\blueprints\core\routes.py", line 7, in index
+    render_template("core/index.html")
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: core/index.html
+2025-11-17 23:41:56,781 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1212, in make_response
+    raise TypeError(
+TypeError: The view function for 'core.index' did not return a valid response. The function either returned None or ended without a return statement.
+2025-11-17 23:42:03,337 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1212, in make_response
+    raise TypeError(
+TypeError: The view function for 'core.index' did not return a valid response. The function either returned None or ended without a return statement.
+2025-11-17 23:43:17,879 ERROR Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 920, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 939, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Moutkik\Desktop\Enterprise Management System\Enterprise-Management-System-1\.venv\Lib\site-packages\flask\app.py", line 1212, in make_response
+    raise TypeError(
+TypeError: The view function for 'core.index' did not return a valid response. The function either returned None or ended without a return statement.
