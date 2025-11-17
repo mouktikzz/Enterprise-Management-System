@@ -32,11 +32,15 @@ def index():
         'in_progress': len(in_progress_tasks),
         'overdue': len(overdue_tasks),
         'completed_today': len(completed_today),
-        'users': User.query.count(),
-        'departments': Department.query.count(),
-        'employees': Employee.query.count(),
-        'projects': Project.query.count(),
     }
+    
+    if current_user.is_admin():
+        counts.update({
+            'users': User.query.count(),
+            'departments': Department.query.count(),
+            'employees': Employee.query.count(),
+            'projects': Project.query.count(),
+        })
     
     recent_tasks = Task.query.order_by(Task.created_at.desc()).limit(5).all() if current_user.is_admin() else \
                    Task.query.filter_by(assigned_to=current_user.id).order_by(Task.created_at.desc()).limit(5).all()

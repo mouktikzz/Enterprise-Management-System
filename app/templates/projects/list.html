@@ -1,39 +1,73 @@
 {% extends "base.html" %}
 {% block content %}
-<section>
+<div class="page-header">
   <h2>Projects</h2>
-  <form method="get" style="margin-bottom:12px">
-    <label>Status
-      <input name="status" value="{{ status }}">
-    </label>
-    <button type="submit">Filter</button>
-  </form>
-  <p><a href="{{ url_for('projects.create_project') }}">Create project</a></p>
-  {% if items %}
+  {% if current_user.is_authenticated and current_user.is_admin() %}
+    <a href="{{ url_for('projects.create_project') }}" class="btn btn-primary">+ Create Project</a>
+  {% endif %}
+</div>
+
+{% if items %}
+<div class="table">
   <table>
     <thead>
-      <tr><th>Name</th><th>Status</th><th>Start</th><th>End</th><th>Department</th><th>Actions</th></tr>
+      <tr>
+        <th>Project</th>
+        <th>Department</th>
+        <th>Tasks</th>
+        <th>Progress</th>
+        <th>Status</th>
+        <th>Timeline</th>
+        <th>Actions</th>
+      </tr>
     </thead>
     <tbody>
       {% for p in items %}
       <tr>
-        <td>{{ p.name }}</td>
-        <td>{{ p.status or '' }}</td>
-        <td>{{ p.start_date or '' }}</td>
-        <td>{{ p.end_date or '' }}</td>
-        <td>{{ p.department.name if p.department else '' }}</td>
+        <td><strong>{{ p.name }}</strong></td>
+        <td>{{ p.department.name if p.department else '-' }}</td>
+        <td>{{ p.tasks|length }} tasks</td>
         <td>
-          <a href="{{ url_for('projects.edit_project', id=p.id) }}">Edit</a>
-          <form action="{{ url_for('projects.delete_project', id=p.id) }}" method="post" style="display:inline">
-            <button type="submit">Delete</button>
-          </form>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <div style="flex: 1; background: #e5e7eb; border-radius: 9999px; height: 8px; overflow: hidden;">
+              <div style="background: {% if p.get_completion_percentage() == 100 %}#10b981{% elif p.get_completion_percentage() > 60 %}#3b82f6{% elif p.get_completion_percentage() > 30 %}#f59e0b{% else %}#ef4444{% endif %}; height: 100%; width: {{ p.get_completion_percentage() }}%; transition: width 0.3s;"></div>
+            </div>
+            <span style="font-weight: 600; font-size: 0.875rem; min-width: 3rem; text-align: right;">{{ p.get_completion_percentage() }}%</span>
+          </div>
+        </td>
+        <td>
+          {% if p.status %}
+            <span class="badge badge-{% if p.status == 'completed' %}success{% elif p.status == 'active' or p.status == 'in_progress' %}info{% else %}secondary{% endif %}">
+              {{ p.status|title }}
+            </span>
+          {% else %}
+            <span class="badge badge-secondary">N/A</span>
+          {% endif %}
+        </td>
+        <td style="font-size: 0.875rem;">
+          {% if p.start_date and p.end_date %}
+            {{ p.start_date.strftime('%b %d') }} - {{ p.end_date.strftime('%b %d, %Y') }}
+          {% elif p.start_date %}
+            Started: {{ p.start_date.strftime('%b %d, %Y') }}
+          {% else %}
+            -
+          {% endif %}
+        </td>
+        <td>
+          {% if current_user.is_authenticated and current_user.is_admin() %}
+            <a href="{{ url_for('projects.edit_project', id=p.id) }}" class="btn btn-sm btn-warning">Edit</a>
+            <form action="{{ url_for('projects.delete_project', id=p.id) }}" method="post" style="display:inline" onsubmit="return confirm('Delete this project?');">
+              <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+            </form>
+          {% endif %}
         </td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  {% else %}
-  <p>No projects yet.</p>
-  {% endif %}
-</section>
+</div>
+{% else %}
+<p class="empty-state">No projects found. {% if current_user.is_authenticated and current_user.is_admin() %}<a href="{{ url_for('projects.create_project') }}">Create one now</a>{% endif %}</p>
+{% endif %}
+
 {% endblock %}

@@ -68,8 +68,13 @@ def edit(task_id):
     if request.method == 'POST':
         task.title = request.form.get('title', '').strip()
         task.description = request.form.get('description', '').strip()
-        task.project_id = request.form.get('project_id')
-        task.assigned_to = request.form.get('assigned_to')
+        
+        project_id = request.form.get('project_id')
+        task.project_id = int(project_id) if project_id else None
+        
+        assigned_to = request.form.get('assigned_to')
+        task.assigned_to = int(assigned_to) if assigned_to else None
+        
         task.priority = request.form.get('priority', 'medium')
         task.status = request.form.get('status', 'pending')
         
@@ -80,6 +85,8 @@ def edit(task_id):
             except ValueError:
                 flash('Invalid date format')
                 return redirect(url_for('tasks.edit', task_id=task_id))
+        else:
+            task.due_date = None
         
         db.session.commit()
         flash('Task updated successfully')
