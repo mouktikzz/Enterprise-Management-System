@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-header">
+  <h2>Tasks Management</h2>
+  {% if current_user.is_admin() %}
+    <a href="{{ url_for('tasks.create') }}" class="btn btn-primary">+ Create New Task</a>
+  {% endif %}
+</div>
+
+{% if tasks %}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Assigned To</th>
+      <th>Project</th>
+      <th>Priority</th>
+      <th>Status</th>
+      <th>Due Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for task in tasks %}
+    <tr class="{% if task.is_overdue() %}row-overdue{% endif %}">
+      <td>
+        <strong>{{ task.title }}</strong>
+        {% if task.description %}
+          <br><small>{{ task.description[:100] }}{% if task.description|length > 100 %}...{% endif %}</small>
+        {% endif %}
+      </td>
+      <td>{{ task.assignee.username if task.assignee else 'Unassigned' }}</td>
+      <td>{{ task.project.name if task.project else '-' }}</td>
+      <td><span class="badge badge-{{ task.get_priority_badge_class() }}">{{ task.priority|upper }}</span></td>
+      <td><span class="badge badge-{{ task.get_status_badge_class() }}">{{ task.status|replace('_', ' ')|title }}</span></td>
+      <td>
+        {{ task.due_date.strftime('%b %d, %Y') if task.due_date else '-' }}
+        {% if task.is_overdue() %}
+          <span class="badge badge-danger">OVERDUE</span>
+        {% endif %}
+      </td>
+      <td>
+        {% if task.status != 'completed' %}
+          {% if task.status == 'pending' %}
+            <form method="POST" action="{{ url_for('tasks.update_status', task_id=task.id) }}" style="display:inline;">
+              <input type="hidden" name="status" value="in_progress">
+              <button type="submit" class="btn btn-sm btn-info">Start</button>
+            </form>
+          {% endif %}
+          {% if task.status == 'in_progress' %}
+            <form method="POST" action="{{ url_for('tasks.update_status', task_id=task.id) }}" style="display:inline;">
+              <input type="hidden" name="status" value="completed">
+              <button type="submit" class="btn btn-sm btn-success">Complete</button>
+            </form>
+          {% endif %}
+        {% endif %}
+        {% if current_user.is_admin() %}
+          <a href="{{ url_for('tasks.edit', task_id=task.id) }}" class="btn btn-sm btn-warning">Edit</a>
+          <form method="POST" action="{{ url_for('tasks.delete', task_id=task.id) }}" style="display:inline;" onsubmit="return confirm('Delete this task?');">
+            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+          </form>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="empty-state">No tasks found. {% if current_user.is_admin() %}<a href="{{ url_for('tasks.create') }}">Create one now</a>{% endif %}</p>
+{% endif %}
+
+{% endblock %}

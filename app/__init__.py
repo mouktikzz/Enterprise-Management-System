@@ -45,6 +45,8 @@ def create_app():
     app.register_blueprint(emp_bp)
     from .blueprints.projects import bp as proj_bp
     app.register_blueprint(proj_bp)
+    from .blueprints.tasks import bp as tasks_bp
+    app.register_blueprint(tasks_bp)
     
     
     # Configure file logging
