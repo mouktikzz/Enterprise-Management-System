@@ -1,15 +1,125 @@
 {% extends "base.html" %}
 {% block content %}
-<section>
-  <h2>Dashboard</h2>
-  <ul>
-    <li>Users: {{ counts.users }}</li>
-    <li>Departments: {{ counts.departments }}</li>
-    <li>Employees: {{ counts.employees }}</li>
-  </ul>
-  <p>
-    <a href="{{ url_for('departments.list_departments') }}">Manage Departments</a> •
-    <a href="{{ url_for('employees.list_employees') }}">Manage Employees</a>
-  </p>
-</section>
+<div class="page-header">
+  <h2>Dashboard - Welcome, {{ current_user.username }}! 👋</h2>
+</div>
+
+<div class="stats-grid">
+  <div class="stat-card card-success">
+    <div class="stat-icon">✅</div>
+    <div class="stat-info">
+      <h3>{{ counts.completed_today }}</h3>
+      <p>Tasks Completed Today</p>
+    </div>
+  </div>
+
+  <div class="stat-card card-warning">
+    <div class="stat-icon">🔄</div>
+    <div class="stat-info">
+      <h3>{{ counts.pending }}</h3>
+      <p>Pending Tasks</p>
+    </div>
+  </div>
+
+  <div class="stat-card card-danger">
+    <div class="stat-icon">🕒</div>
+    <div class="stat-info">
+      <h3>{{ counts.overdue }}</h3>
+      <p>Overdue Tasks</p>
+    </div>
+  </div>
+
+  <div class="stat-card card-info">
+    <div class="stat-icon">📊</div>
+    <div class="stat-info">
+      <h3>{{ counts.in_progress }}</h3>
+      <p>In Progress</p>
+    </div>
+  </div>
+</div>
+
+{% if current_user.is_admin() %}
+<div class="stats-grid">
+  <div class="stat-card card-primary">
+    <div class="stat-icon">👥</div>
+    <div class="stat-info">
+      <h3>{{ counts.users }}</h3>
+      <p>Total Employees</p>
+    </div>
+  </div>
+
+  <div class="stat-card card-secondary">
+    <div class="stat-icon">🏢</div>
+    <div class="stat-info">
+      <h3>{{ counts.departments }}</h3>
+      <p>Departments</p>
+    </div>
+  </div>
+
+  <div class="stat-card card-secondary">
+    <div class="stat-icon">📁</div>
+    <div class="stat-info">
+      <h3>{{ counts.projects }}</h3>
+      <p>Active Projects</p>
+    </div>
+  </div>
+
+  <div class="stat-card card-secondary">
+    <div class="stat-icon">📋</div>
+    <div class="stat-info">
+      <h3>{{ counts.total_tasks }}</h3>
+      <p>Total Tasks</p>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<div class="dashboard-section">
+  <h3>Recent Tasks</h3>
+  {% if recent_tasks %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Assigned To</th>
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Due Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for task in recent_tasks %}
+      <tr class="{% if task.is_overdue() %}row-overdue{% endif %}">
+        <td><strong>{{ task.title }}</strong></td>
+        <td>{{ task.assignee.username if task.assignee else 'Unassigned' }}</td>
+        <td><span class="badge badge-{{ task.get_priority_badge_class() }}">{{ task.priority|upper }}</span></td>
+        <td><span class="badge badge-{{ task.get_status_badge_class() }}">{{ task.status|replace('_', ' ')|title }}</span></td>
+        <td>
+          {{ task.due_date.strftime('%b %d, %Y') if task.due_date else '-' }}
+          {% if task.is_overdue() %}<span class="badge badge-danger">OVERDUE</span>{% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="empty-state">No recent tasks</p>
+  {% endif %}
+  <p><a href="{{ url_for('tasks.list_tasks') }}" class="btn btn-primary">View All Tasks</a></p>
+</div>
+
+<div class="dashboard-section">
+  <h3>Quick Actions</h3>
+  <div class="quick-actions">
+    {% if current_user.is_admin() %}
+      <a href="{{ url_for('tasks.create') }}" class="btn btn-primary">+ Create Task</a>
+      <a href="{{ url_for('projects.create_project') }}" class="btn btn-primary">+ Create Project</a>
+      <a href="{{ url_for('departments.create_department') }}" class="btn btn-primary">+ Create Department</a>
+    {% else %}
+      <a href="{{ url_for('tasks.list_tasks') }}" class="btn btn-primary">My Tasks</a>
+      <a href="{{ url_for('projects.list_projects') }}" class="btn btn-primary">My Projects</a>
+    {% endif %}
+  </div>
+</div>
+
 {% endblock %}
