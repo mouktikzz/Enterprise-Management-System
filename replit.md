@@ -177,6 +177,7 @@ def get_completion_percentage(self):
 - Created tasks blueprint with CRUD operations
 - Implemented role-based access control
 - Added task status workflow (pending → in_progress → completed)
+- Added status dropdown to task creation form
 
 ### Enhanced Dashboard (Nov 17)
 - Added task statistics cards
@@ -194,6 +195,13 @@ def get_completion_percentage(self):
 - Added color-coded badges and status indicators
 - Implemented responsive grid layouts
 - Created modern gradient header
+
+### Admin User Management (Nov 17)
+- Added "Create User" feature for admins
+- Automatic secure password generation (10 characters)
+- User credentials displayed only once for security
+- Admins can create both admin and employee accounts
+- Simplified employee onboarding workflow
 
 ## Configuration
 
